@@ -51,3 +51,39 @@ bun run <script name>
 * Consult when stuck, consult when stuck, consult when stuck.
 * Keep your commit messages discriptive and clean to help reviews when going back to old commits.
 * Document your work for co-workers to help them understand and follow along with what you have achieved.
+## Recommended folder tree to follow:
+```sh
+project-0/
+├── public/
+├── src/
+│   ├── assets/             # Static assets: images, fonts, icons
+│   ├── components/         # Reusable UI components (buttons, cards, etc.)
+│   ├── features/           # Feature-specific folders (grouped by domain)
+│   │   ├── auth/
+│   │   │   ├── components/ # Feature-specific components
+│   │   │   ├── hooks/
+│   │   └── dashboard/
+│   ├── hooks/              # Shared custom React hooks
+│   ├── layouts/            # Shared page layouts
+│   ├── lib/                # Utility functions, API calls, external libraries
+│   ├── pages/              # Page-level components (for routing)
+│   ├── routes/             # Central routing logic (React Router)
+│   ├── store/              # Global state (Redux, Zustand, or context)
+│   ├── styles/             # Global SCSS or Tailwind configuration
+│   ├── types/              # TypeScript types & interfaces
+│   ├── App.tsx
+│   ├── main.tsx           # or index.tsx (Vite/CRA entry point)
+│   └── vite-end.d.ts     # Or config file for CRA/Webpack
+├── .env
+├── .gitignore
+├── eslint.config.js
+├── README.md
+├── index.html
+├── .env
+├── .gitignore
+├── package.json
+├── vite.config.ts
+├── tsconfig.node.json
+├── tsconfig.app.json
+└── tsconfig.json
+```
