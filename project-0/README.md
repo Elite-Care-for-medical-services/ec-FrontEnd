@@ -50,3 +50,4 @@ bun run <script name>
 * Write your testing cases and scripts throughout the development process.
 * Consult when stuck, consult when stuck, consult when stuck.
 * Keep your commit messages discriptive and clean to help reviews when going back to old commits.
+* Document your work for co-workers to help them understand and follow along with what you have achieved.
