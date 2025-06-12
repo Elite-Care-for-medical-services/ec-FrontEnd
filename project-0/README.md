@@ -1,54 +1,52 @@
-# React + TypeScript + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+# Project 0#
+---
+This is a project that aims to introduce the team to the general workflow that will be followed withing our development process.
+## Key points to keep in mind:
+* The main language across Front/Back end will be [TS](https://www.typescriptlang.org/).
+* The main run time that will be used on both ends will be [bun](https://bun.sh/).
+* Front end framework will be [React](https://react.dev/).
+* Bacn end framwork will be [Espress.js](https://expressjs.com/).
+* Any further additions to the used frameworks is up to the team members after providing a clear explanation on why/how this addition will benefit the project.
+## How to start:
+1. first let's make sure you have bun installed on your machine:
+for windows:
+```sh
+powershell -c "irm bun.sh/install.ps1|iex"
 ```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+for linux based systems:
+```sh
+curl -fsSL https://bun.sh/install | bash 
 ```
+2. then, we will clone the repo:
+```sh
+git clone https://github.com/Elite-Care-for-medical-services/ec-FrontEnd.git
+```
+if you want to clone with an access token:
+```sh
+git clone https://<TOKEN>@github.com/Elite-Care-for-medical-services/ec-FrontEnd.git
+```
+3. install all dependencies after cloning the repo:
+```sh
+cd ec-FrontEnd
+bun install
+```
+4. if you want to install any extra packages, use the command:
+```sh
+bun add <package name>
+```
+5. if you want to run the app, use one of the following commands:
+```sh
+bun dev
+bun run dev
+```
+or if you want to run a script from your `package.json` file:
+```sh
+bun run <script name>
+```
+## Best practices/Rules to follow:
+* DO NOT WORK OR COMMIT ANY WORK TO THE MAIN BRANCH. Create your own pranch, do your thing, push your changes, and then open a [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) to merge your changes to the main branch.
+* Use **Prettier** default settings across your code for unified formatting across the code base, to avoid conflicts during the CI process.
+* Commit to the Scrum flow configured in the [notion](https://www.notion.so/20fab7877c3f80688d3dc0f1884b5e2b?v=20fab7877c3f809f8630000c3e03da68) workspace.
+* Write your testing cases and scripts throughout the development process.
+* Consult when stuck, consult when stuck, consult when stuck.
+* Keep your commit messages discriptive and clean to help reviews when going back to old commits.
