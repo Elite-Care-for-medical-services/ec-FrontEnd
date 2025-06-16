@@ -33,4 +33,6 @@ jobs:
           bunx eslint . --max-warnings=0
         
       - name: 🏗️ Build project
-        run: bun run build
+        run: |
+         cd project-0
+         bun run build
