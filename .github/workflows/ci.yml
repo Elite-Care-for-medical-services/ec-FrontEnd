@@ -19,10 +19,11 @@ jobs:
           curl -fsSL https://bun.sh/install | bash
           echo 'PATH="$HOME/.bun/bin:$PATH"' >> $GITHUB_ENV
 
-      - name: 🔍 Check Bun version
-        run: bun --version
-
       - name: 📦 Install dependencies with Bun
         run: bun install
-
-    
+        
+      - name: 🧹 Run ESLint check
+        run: bunx eslint . --max-warnings=0
+        
+      - name: 🏗️ Build project
+        run: bun run build
