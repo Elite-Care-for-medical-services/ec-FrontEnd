@@ -23,7 +23,9 @@ jobs:
           bun --version
 
       - name: 📦 Install dependencies with Bun
-        run: bun install
+        run: |
+          cd project-0
+          bun install
         
       - name: 🧹 Run ESLint check
         run: bunx eslint . --max-warnings=0
