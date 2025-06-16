@@ -12,7 +12,7 @@ const teamMembers = [
   { name: 'Modather Abd Alhag', role: 'Frontend Engineer', github: 'https://github.com/modtherhub', linkedin: 'https://www.linkedin.com/in/modather-abd-alhag-4b0a1b1b6/' },
   { name: 'Omnia Ahmed', role: 'Frontend Engineer', github: 'https://github.com/Moniaar', linkedin: 'https://www.linkedin.com/in/moniaar' },
   { name: 'Abd Elaziz Mohsen', role: 'Backend Engineer', github: 'https://github.com/Batman99SD', linkedin: 'https://www.linkedin.com/in/abd-elaziz-mohsen-4b0a1b1b6/' },
-  { name: 'Mohamed Musa', role: 'Backend Engineer', github: 'https://github.com/Kusa-san', linkedin: 'https://www.linkedin.com/in/mohamed-musa-4b0a1b1b6/' },
+  { name: 'Mohamed Musa', role: 'Backend Engineer', github: 'https://github.com/Kusa-san', linkedin: 'https://www.linkedin.com/in/mohamed-musa8800' },
   { name: 'Omer Alfaroug', role: 'DevOps', github: 'https://github.com/Mr-Robinhood', linkedin: 'https://www.linkedin.com/in/omer-alfaroug-mohammed-ali' },
 ];
 
