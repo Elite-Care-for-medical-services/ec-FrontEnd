@@ -28,7 +28,9 @@ jobs:
           bun install
         
       - name: 🧹 Run ESLint check
-        run: bunx eslint . --max-warnings=0
+        run: |
+          cd project-0
+          bunx eslint . --max-warnings=0
         
       - name: 🏗️ Build project
         run: bun run build
