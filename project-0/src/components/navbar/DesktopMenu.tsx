@@ -95,10 +95,10 @@ const DesktopMenu = ({ menu }: { menu: MenuType }) => {
               
               {/* render each submenu item */}
               {/* I have redline {menu.subMenu} type error */}
-              {menu.subMenu.map((submenu, i) => (
+              {menu.subMenu?.map((submenu, i) => (
                 <div className="relative cursor-pointer" key={i}>
                     {/* I have redline {menu.gridCols} type error */}
-                    {menu.gridCols > 1 && menu?.subMenuHeading?.[i] && (
+                    {menu.gridCols && menu.gridCols > 1 && menu?.subMenuHeading?.[i] && (
                     <p className="text-sm mb-4 text-gray-900">
                       {menu?.subMenuHeading?.[i]}
                     </p>

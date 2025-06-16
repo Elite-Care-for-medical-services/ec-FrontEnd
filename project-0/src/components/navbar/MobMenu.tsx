@@ -103,7 +103,7 @@ const MobMenu = () => {
                         className="p-2 flex-center hover:bg-[#c6ac8f7e] rounded-md gap-x-2 cursor-pointer"
                       >
                         
-                        <Icon size={16} />
+                        {Icon && <Icon size={16} />}
                         {name}
                         
                       </li>
