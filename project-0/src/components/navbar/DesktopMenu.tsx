@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
 import { motion } from 'motion/react';
 
@@ -21,8 +21,24 @@ const DesktopMenu = ({ menu }: { menu: MenuType }) => {
     // check if the menu has a subMenu array
     const hasSubMenu = menu?.subMenu?.length;
 
-     // track hover state to show/hide submenu
-    const [isHover, setIsHover] = useState(false);
+     // track click state to show/hide submenu
+    const [isOpen, setIsOpen] = useState(false);
+    const menuRef = useRef<HTMLDivElement>(null);
+
+    // Close menu when clicking outside
+    useEffect(() => {
+      const handleClickOutside = (event: MouseEvent) => {
+        if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+          setIsOpen(false);
+        }
+      };
+      if (isOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+      }
+      return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      };
+    }, [isOpen]);
 
     // animation variable for submenu appearance/disappearance
     const subMenuAnimate = {
@@ -47,21 +63,20 @@ const DesktopMenu = ({ menu }: { menu: MenuType }) => {
   };
 
   // toggle hover state (mouse enter/leave)
-  const toggleHoverMenu = () => {
-    setIsHover(!isHover);
+  const toggleMenu = () => {
+    setIsOpen(prev => !prev);
   };
     return (
 
-     <li>
-      {/* main menu item container with hover tracking */}
-      <motion.div
-        className="group/link overflow-hidden"
-        onHoverStart={toggleHoverMenu}
-        onHoverEnd={toggleHoverMenu}
-      >
+     <div ref={menuRef}>
+      {/* main menu item container with click tracking */}
+      <motion.div className="group/link overflow-hidden">
 
         {/* menu label with optional dropdown icon */}
-        <span className="flex-center gap-1 hover:bg-[#EAE0D5] cursor-pointer px-3 py-1 rounded-xl">
+        <span 
+          className="flex-center gap-1 hover:bg-[#EAE0D5] cursor-pointer px-3 py-1 rounded-xl"
+          onClick={hasSubMenu ? toggleMenu : undefined}
+          >
           {hasSubMenu ? (
             <>
               {menu.name}
@@ -79,7 +94,7 @@ const DesktopMenu = ({ menu }: { menu: MenuType }) => {
           <motion.div
             className="sub-menu"
             initial="exit"
-            animate={isHover ? "enter" : "exit"}
+            animate={isOpen ? "enter" : "exit"}
             variants={subMenuAnimate}
           >
             {/* grid layout for submenu items */}
@@ -123,7 +138,7 @@ const DesktopMenu = ({ menu }: { menu: MenuType }) => {
           </motion.div>
         )}
       </motion.div>
-    </li>
+    </div>
     
   )
 }

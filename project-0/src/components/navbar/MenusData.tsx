@@ -16,7 +16,7 @@ export type SubMenuItem = {
   name?: string;
   desc?: string;
   href?: string;
-  icon?: React.ElementType; // or use `JSX.Element` if you're directly passing React elements
+  icon?: React.ElementType; 
 };
 
 // Define the type for navItems array
