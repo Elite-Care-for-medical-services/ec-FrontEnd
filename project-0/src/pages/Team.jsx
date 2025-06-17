@@ -8,7 +8,7 @@ export default function Team() {
   const navigate = useNavigate();
 
   return (
-    <div>
+    <>
       <p>
       </p>
       <h1>Meet Our Team</h1>
@@ -21,7 +21,7 @@ export default function Team() {
           <TeamCard key={index} {...member} />
         ))}
       </div>
-    </div>
+    </>
   );
 }
   
