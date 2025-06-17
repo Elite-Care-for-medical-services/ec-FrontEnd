@@ -1,0 +1,38 @@
+name: CI with Bun
+
+on:
+  push:
+    branches: [main]  
+  pull_request:
+    branches: [main]
+
+jobs:
+  frontend:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🧾 Checkout repository
+        uses: actions/checkout@v3
+
+      - name: 🛠️ Install Bun
+        run: |
+          curl -fsSL https://bun.sh/install | bash
+          echo "BUN_INSTALL=$HOME/.bun" >> $GITHUB_ENV
+          echo "PATH=$HOME/.bun/bin:\$PATH" >> $GITHUB_ENV
+          export PATH="$HOME/.bun/bin:$PATH"
+          bun --version
+
+      - name: 📦 Install dependencies with Bun
+        run: |
+          cd project-0
+          bun install
+        
+      - name: 🧹 Run ESLint check
+        run: |
+          cd project-0
+          bunx eslint . --max-warnings=0
+        
+      - name: 🏗️ Build project
+        run: |
+         cd project-0
+         bun run build

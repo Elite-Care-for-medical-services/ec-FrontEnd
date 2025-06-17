@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Team from './pages/Team';
 import './App.css';
 
+
 function App() {
   return (
     <Router>
@@ -12,7 +13,7 @@ function App() {
         <Route path="/Team" element={<Team />} />
       </Routes>
     </Router>
-  );
+  )
 }
 
 export default App;
