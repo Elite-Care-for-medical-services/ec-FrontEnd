@@ -1,4 +1,4 @@
-import TeamCard from './TeamCard';
+import TeamCard from '../components/TeamCard';
 // to be able to navigate back to the home page
 import { useNavigate } from 'react-router-dom';
 import teamMembers from '../store/teamMockData';
