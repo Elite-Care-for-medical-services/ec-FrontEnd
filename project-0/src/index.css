@@ -2,11 +2,8 @@
 
 @tailwind utilities;
 
-
-
-
 body {
-  @apply text-[#0a0908] ;
+  @apply text-[#0a0908];
 }
 
 @layer components {
@@ -22,4 +19,38 @@ body {
   .flex-center-between {
     @apply flex items-center justify-between;
   }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+#rect text {
+  pointer-events: none;
+}
+
+svg {
+  overflow: visible;
+  height: 100%;
+
+  /* Fix Safari rendering bug */
+  transform: translateZ(0);
+}
+
+path {
+  stroke-width: 2;
+  stroke: gray;
+}
+
+#div {
+  width: 120px;
+  height: 60px;
+  pointer-events: none;
+  background-color: #aa00ee;
+  color: black;
+  text-align: center;
+  line-height: 60px;
+  position: absolute;
+  top: 30%;
+  left: 60%;
+  font-size: 32px;
 }
