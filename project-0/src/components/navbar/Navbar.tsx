@@ -8,6 +8,7 @@ import PatientsAPI from './PatientsAPI';
 
 const Navbar = () => {
   return (
+    <>
     <header className="h-16 top-0">
       <nav className="px-6 flex justify-between items-center h-full mx-auto">
         <div className="px-4 flex items-center gap-x-6">
@@ -54,6 +55,7 @@ const Navbar = () => {
         </div>
       </nav>
     </header>
+    </>
   );
 };
 
