@@ -8,6 +8,7 @@ import "./App.css";
 
 function App() {
   return (
+    <>
     <Router>
       <Navbar />
       <Routes>
@@ -16,6 +17,7 @@ function App() {
         <Route path="/PatientsAPI" element={<PatientsAPI />} />
       </Routes>
     </Router>
+    </>
   );
 }
 
